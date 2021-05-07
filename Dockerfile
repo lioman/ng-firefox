@@ -9,7 +9,7 @@ RUN apt-get -qqy update \
   xz-utils \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-ENV NODE_VERSION 12.13.0
+ENV NODE_VERSION 14.16.1
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
@@ -48,7 +48,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && rm "node-v$NODE_VERSION-linux-$ARCH.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-ENV YARN_VERSION 1.19.1
+ENV YARN_VERSION 1.22.5
 
 RUN set -ex \
   && for key in \
